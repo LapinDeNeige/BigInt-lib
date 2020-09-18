@@ -920,7 +920,7 @@ short ho=in_str.size();
 return ho;
 }
 
-BigInt BigInt :: lg()
+BigInt BigInt :: lg() //take logarithm of 2
 {
 BigInt rs("0");
 BigInt nm=*this;
@@ -1032,7 +1032,7 @@ return false;
 
 
 
-BigInt BigInt::pow(BigInt dg,BigInt mod)
+BigInt BigInt::pow(BigInt dg,BigInt mod) //binary power O(log n)
 {
 if(dg=="0")
 	return "1";
