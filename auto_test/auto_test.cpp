@@ -49,7 +49,7 @@ system("rm /tmp/ko");
 
 if(sz==0)
 {
-cout<<"programm bc is not install in your system\n";
+cout<<"\nprogramm bc is not install in your system\n";
 cout<<"please install it to be able to use auto_test progamm\n";
 cout<<"or use manual test\n";
 exit(-7);
@@ -159,7 +159,7 @@ return rt;
 
 inline void prn_hlp()
 {
-cout<<"usage: auto_test -t pause_time -d digits number";
+cout<<"\nusage: auto_test -t pause_time -d digits number";
 cout<<"\n";
 }
 
@@ -211,6 +211,8 @@ int l=atoi(&argv[i][3]);
 l<=0?dg=10:dg=l;
 
 }
+
+
 
 else 
 {
@@ -491,19 +493,24 @@ system("clear");
 
 cout<<"<=========pow==========>\n\n";
 
-unsigned int rnd=rand()%999999; //exponent
+unsigned int rnd=rand()%999; //exponent
+
 BigInt ex(rnd);
+BigInt md=dv;
 
-tr=od.pow(ex,dv);
+if(md%"2"=="0")
+	md=md+"1";
 
-std::cout<<od.gt_str()<<"^"<<ex.gt_str()<<"mod "<<dv.gt_str()<<"="<<tr.gt_str();
+tr=od.pow(ex,md);
+
+std::cout<<od.gt_str()<<"^"<<ex.gt_str()<<"mod "<<md.gt_str()<<"="<<tr.gt_str();
 
 srt.append(kmd);
 srt.append(od.gt_str());
 srt.append("^");
 srt.append(ex.gt_str());
 srt.append("%");
-srt.append(dv.gt_str());
+srt.append(md.gt_str());
 srt.append(kmd_tw);
 
 
